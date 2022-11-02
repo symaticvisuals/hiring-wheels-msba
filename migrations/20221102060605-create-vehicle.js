@@ -21,6 +21,7 @@ module.exports = {
       },
       vehicleSubCategoryId: {
         type: Sequelize.INTEGER,
+        notNull: true,
       },
       color: {
         type: Sequelize.STRING,

@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     vehicleSubCategoryId: {
       type: DataTypes.INTEGER,
+      notNull: true,
     },
     color: {
       type: DataTypes.STRING,
