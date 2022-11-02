@@ -22,17 +22,27 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.CHAR(6),
       allowNull: false,
     },
-
-    timestamps: true,
-    paranoid: true,
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    deletedAt: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
   });
-
 
   Location.associate = (models) => {
     Location.hasMany(models.bookings, {
       foreignKey: "locationId",
     });
-    Location.belongTo(models.cities, {
+    Location.belongsTo(models.cities, {
       foreignKey: "cityId",
     });
   };

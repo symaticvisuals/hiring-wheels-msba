@@ -40,9 +40,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT(10),
       defaultValue: 10000.0,
     },
-
-    timestamps: true,
-    paranoid: true,
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    deletedAt: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
   });
 
   User.associate = (models) => {

@@ -1,9 +1,9 @@
-const Role = require("../classes/role/Role");
+const VehicleSubCategory = require("../classes/VehicleSubCategory/VehicleSubCategory");
 const Utils = require("../utils/utils");
 
 const create = async (req, res, next) => {
   try {
-    const response = await Role.create(req);
+    const response = await VehicleSubCategory.create(req);
     return Utils.sendResponse(
       req,
       res,
@@ -18,7 +18,7 @@ const create = async (req, res, next) => {
 
 const get = async (req, res, next) => {
   try {
-    const response = await Role.get();
+    const response = await VehicleSubCategory.get();
     return Utils.sendResponse(
       req,
       res,
@@ -31,9 +31,9 @@ const get = async (req, res, next) => {
   }
 };
 
-const getRoleById = async (req, res, next) => {
+const getVehicleSubCategoryById = async (req, res, next) => {
   try {
-    const response = await Role.getById(req);
+    const response = await VehicleSubCategory.getById(req);
     return Utils.sendResponse(
       req,
       res,
@@ -48,7 +48,7 @@ const getRoleById = async (req, res, next) => {
 
 const update = async (req, res, next) => {
   try {
-    const response = await Role.update(req);
+    const response = await VehicleSubCategory.update(req);
     return Utils.sendResponse(
       req,
       res,
@@ -63,7 +63,7 @@ const update = async (req, res, next) => {
 
 const remove = async (req, res, next) => {
   try {
-    const response = await Role.remove(req);
+    const response = await VehicleSubCategory.remove(req);
     return Utils.sendResponse(
       req,
       res,
@@ -78,7 +78,7 @@ const remove = async (req, res, next) => {
 
 module.exports = {
   create,
-  getRoleById,
+  getVehicleSubCategoryById,
   get,
   update,
   remove,

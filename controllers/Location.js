@@ -1,9 +1,9 @@
-const Role = require("../classes/role/Role");
+const Location = require("../classes/location/Location");
 const Utils = require("../utils/utils");
 
 const create = async (req, res, next) => {
   try {
-    const response = await Role.create(req);
+    const response = await Location.create(req);
     return Utils.sendResponse(
       req,
       res,
@@ -18,7 +18,7 @@ const create = async (req, res, next) => {
 
 const get = async (req, res, next) => {
   try {
-    const response = await Role.get();
+    const response = await Location.get();
     return Utils.sendResponse(
       req,
       res,
@@ -31,9 +31,9 @@ const get = async (req, res, next) => {
   }
 };
 
-const getRoleById = async (req, res, next) => {
+const getLocationById = async (req, res, next) => {
   try {
-    const response = await Role.getById(req);
+    const response = await Location.getById(req);
     return Utils.sendResponse(
       req,
       res,
@@ -48,7 +48,7 @@ const getRoleById = async (req, res, next) => {
 
 const update = async (req, res, next) => {
   try {
-    const response = await Role.update(req);
+    const response = await Location.update(req);
     return Utils.sendResponse(
       req,
       res,
@@ -63,7 +63,7 @@ const update = async (req, res, next) => {
 
 const remove = async (req, res, next) => {
   try {
-    const response = await Role.remove(req);
+    const response = await Location.remove(req);
     return Utils.sendResponse(
       req,
       res,
@@ -78,7 +78,7 @@ const remove = async (req, res, next) => {
 
 module.exports = {
   create,
-  getRoleById,
+  getLocationById,
   get,
   update,
   remove,
